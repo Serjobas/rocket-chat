@@ -1,6 +1,6 @@
-export const messages =  [
+export const messages = [
   {
-    id:1,
+    id: 1,
     firstMessageDate: 1525180880000,
     messages: [
       {
@@ -81,5 +81,5 @@ export const messages =  [
         messageBody: 'Перевел, спасибо что выручили!',
         sentDate: 1525608092000
       }]
-    }
-  ];
+  }
+];

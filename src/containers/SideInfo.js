@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
@@ -20,24 +20,19 @@ const ListsWrapper = styled.div`
   overflow: auto;
 `;
 
-class SideInfo extends Component {
-  state = {  }
-  render() {
-    return (
-      <Wrapper>
-        <InfoToggle width={346}/>
+const SideInfo = () => (
+  <Wrapper>
+    <InfoToggle width={346} />
 
-        <ListsWrapper>
-          <Switch>
-            <Route path="/accounts" exact render={ () => (<AccountList />)} />
-            <Route path="/accounts/:id" exact render={ ({ match }) => (<AccountOpen id={match.params.id} />)} />
-            <Route path="/deposits" exact render={() => (<DepositList />)} />
-            <Redirect to="/accounts" />
-          </Switch>
-        </ListsWrapper>
-      </Wrapper>
-    );
-  }
-}
+    <ListsWrapper>
+      <Switch>
+        <Route path="/accounts" exact render={() => (<AccountList />)} />
+        <Route path="/accounts/:id" exact render={({ match }) => (<AccountOpen id={match.params.id} />)} />
+        <Route path="/deposits" exact render={() => (<DepositList />)} />
+        <Redirect to="/accounts" />
+      </Switch>
+    </ListsWrapper>
+  </Wrapper>
+);
 
 export default SideInfo;

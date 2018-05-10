@@ -8,7 +8,8 @@ const AccountList = ({ accounts }) => (
   <div>
     {accounts.map(account => (<AccountItem key={account.id} {...account} linkTo={`/accounts/${account.id}`}
                               lastOperation={account.operations.sort((a,b) => b.date - a.date)[0]}
-                              />))}
+                              />)
+    )}
   </div>
 );
 

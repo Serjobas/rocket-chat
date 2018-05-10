@@ -39,7 +39,7 @@ const Textarea = styled.textarea`
 
 class Form extends Component {
 
-  componentDidMount(){
+  componentDidMount() {
     const { bootstrapMessage } = this.props;
     bootstrapMessage();
   }
@@ -58,7 +58,7 @@ class Form extends Component {
     const { sendMessage } = this.props;
     const { textValue } = this.state;
 
-    if(!textValue.length) return null;
+    if (!textValue.length) return null;
 
     sendMessage(textValue);
     this.setState({ textValue: '' })
@@ -74,21 +74,21 @@ class Form extends Component {
     const { textValue } = this.state;
 
     return (
-       <Wrapper>
-         <Head>Чат</Head>
-         <Textarea
+      <Wrapper>
+        <Head>Чат</Head>
+        <Textarea
           onKeyDown={this.handleKeyDown}
           value={textValue}
           onChange={this.handleChange}
           placeholder="Сообщение"
-         />
+        />
         <Button
           onClick={this.handleSendMessage}
           disabled={!textValue.length}
         >
           Отправить
         </Button>
-       </Wrapper>
+      </Wrapper>
     );
   }
 }

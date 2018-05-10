@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Messages from './Messages';
 import Form from './Form';
@@ -11,16 +11,11 @@ const Wrapper = styled.div`
   box-sizing: border-box;
 `;
 
-class Chat extends Component {
-  state = {  }
-  render() {
-    return (
-      <Wrapper>
-        <Form />
-        <Messages />
-      </Wrapper>
-    );
-  }
-}
+const Chat = () => (
+  <Wrapper>
+    <Form />
+    <Messages />
+  </Wrapper>
+);
 
 export default Chat;

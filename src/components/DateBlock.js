@@ -19,11 +19,9 @@ const Wrapper = styled.div`
 `;
 
 const DateBlock = ({messages, firstMessageDate}) => {
-  // const date = new Date(firstMessageDate)
-  // const dateString = `— ${("0" + (date.getDate())).slice(-2)}.${("0" + (date.getMonth() + 1)).slice(-2)}.${date.getFullYear()} — `;
+
   const dateString = ` — ${formatDate(firstMessageDate)} — `;
   const filteredMessages = messages.sort((a, b) => b.sentDate - a.sentDate);
-
 
   return (
     <Wrapper>

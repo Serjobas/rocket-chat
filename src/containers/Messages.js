@@ -41,7 +41,7 @@ const Messages = ({ messages }) => (
 );
 
 const mapStateToProps = (state) => ({
-  messages: state.messages.sort( (a,b) => b.firstMessageDate - a.firstMessageDate)
+  messages: state.messages.sort((a, b) => b.firstMessageDate - a.firstMessageDate)
 });
 
 export default connect(mapStateToProps)(Messages);

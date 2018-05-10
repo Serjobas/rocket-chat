@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 
@@ -15,19 +15,14 @@ const HistoryHead = styled.div`
 `;
 
 
-class AccountOpen extends Component {
-  state = {  }
-  render() {
-    const { account, sendOperation } = this.props;
-    return (
-      <div>
-        <AccountItem key={account.id} {...account} isOpen={true} linkTo="/accounts" />
-        <HistoryHead>История операций</HistoryHead>
-        <OperationList sendOperation={sendOperation} operations={account.operations.sort((a, b) => b.date - a.date)} currency={account.currency} />
-      </div>
-    );
-  }
-}
+const AccountOpen = ({ account, sendOperation }) => (
+  <div>
+    <AccountItem key={account.id} {...account} isOpen={true} linkTo="/accounts" />
+    <HistoryHead>История операций</HistoryHead>
+    <OperationList sendOperation={sendOperation} operations={account.operations.sort((a, b) => b.date - a.date)} currency={account.currency} />
+  </div>
+);
+
 
 const mapStateToProps = (state, ownProps) => ({
   account: state.accounts.find(item => item.id == ownProps.id)
