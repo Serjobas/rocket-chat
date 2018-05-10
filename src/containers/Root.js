@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 
 import store from '../store';
 
